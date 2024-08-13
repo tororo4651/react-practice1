@@ -1,0 +1,15 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.text {
+  padding: 10px;
+  background-color: #0bd;
+  color: gold;
+  font-size: 1.5rem;
+  font-weight: 700;
+}

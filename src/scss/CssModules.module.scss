@@ -1,0 +1,22 @@
+.container {
+  margin-block-start: 40px;
+  border: solid 10px green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  color: chocolate;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.btn {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: chocolate;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
