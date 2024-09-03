@@ -24,4 +24,6 @@ yarn-error.log*
 
 
 
-practice1.code-workspace
+# 追加
+public
+react-practice1.code-workspace
