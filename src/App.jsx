@@ -15,6 +15,7 @@ export const App = () => {
   // フラグの切り替え
 
   const [isFlag, setIsFlag] = useState(false);
+
   const switchFlag = () => {
     setIsFlag(!isFlag);
   };
@@ -107,18 +108,18 @@ export const App = () => {
   return (
     <React.Fragment>
 
-      <p className="text">class属性　段落。</p>
+      <p className="test">class属性　段落。</p>
 
 
-      <h1 style={{ marginTop: 40, color: 'red', fontSize: '2rem', fontWeight: 'bold' }}>style属性　見出し1</h1>
+      <h1 style={{ marginTop: 40, color: 'red', fontSize: '2rem', 'font-weight': 'bold' }}>style属性　見出し1</h1>
 
-      <p>text3</p>
-      <ColoredMessage marginTop="40px" color="blue">
-        <b>p要素　ColoredMessage1</b>
+
+      <ColoredMessage marginTop='40px' color='blue'>
+        <b>p要素　b要素　ColoredMessage1</b>
       </ColoredMessage>
 
-      <ColoredMessage color="pink">
-        <b>p要素　ColoredMessage2</b>
+      <ColoredMessage color='pink'>
+        <b>p要素　b要素　ColoredMessage2</b>
       </ColoredMessage>
 
 
@@ -128,10 +129,10 @@ export const App = () => {
       <TailwindCss />
 
 
-      <div className="mt-10 border-8 border-red-500 p-4 rounded-xl">
-        <button className="p-5 bg-blue-600 text-yellow-300 text-xl font-semibold rounded-3xl" type="button" onClick={switchFlag}>切り替えボタン</button>
+      <div className="mt-10 border-8 border-red-500 rounded-xl p-4">
+        <button className="btn" type="button" onClick={switchFlag}>切り替えボタン</button>
 
-        {isFlag && <div className="mt-5 ml-5 text-lime-700 text-4xl"><b>フラグ</b></div>}
+        {isFlag && <div style={{ marginBlockStart: '10px', marginLeft: 20, color: 'green', fontSize: 32 }}><b>フラグ</b></div>}
       </div>
 
 

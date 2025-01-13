@@ -1,8 +1,10 @@
 export const ColoredMessage = (props) => {
+
   // const { children, marginTop, color } = props;
 
-  const style = {
+  const styles = {
     marginTop: props.marginTop,
+    // marginTop,
     color: props.color,
     // color,
     fontSize: 24
@@ -11,5 +13,5 @@ export const ColoredMessage = (props) => {
   };
 
 
-  return <p style={style}>{props.children}</p>;
+  return <p style={styles}>{props.children}</p>;
 };

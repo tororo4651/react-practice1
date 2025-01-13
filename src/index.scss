@@ -1,4 +1,4 @@
-/* Tailwind CSS */
+// Tailwind CSS
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,10 +6,20 @@
 
 
 
-.text {
+.test {
   padding: 10px;
   background-color: #0bd;
   color: gold;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+
+.btn {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: blue;
+  color: gold;
+  font-size: 20px;
+  font-weight: bold;
 }

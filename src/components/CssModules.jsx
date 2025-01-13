@@ -7,7 +7,7 @@ const CssModules = () => {
     <div className={classes.container}>
       <h2 className={classes.heading}>CSS Modules</h2>
 
-      <button className={classes.btn}>ボタン</button>
+      <button className={classes.btn} type="button">ボタン</button>
     </div>
   );
 };
