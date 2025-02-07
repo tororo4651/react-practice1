@@ -22,7 +22,6 @@ export const App = () => {
 
 
 
-
   // 数値の増減・リセット
 
   const [num, setNum] = useState(0);
@@ -46,24 +45,30 @@ export const App = () => {
 
 
 
-
   // useEffect
 
-  // 第２引数を省略すると、レンダリングのたびに実行される。
   // 一番最後に実行される。
+
+
+  // 第２引数を省略すると、レンダリングのたびに実行される。
 
 
   // 最初のレンダリング時のみ実行される。
   useEffect(() => {
-    console.log('useEffect-test');
+    console.log('useEffect Test');
   }, []);
 
 
-  // num が変更された場合のみ、実行される。
+  // isFlag が変更された場合のみ、実行される。
   useEffect(() => {
-    console.log('useEffect-test');
-  }, [num]);
+    console.log('useEffect Test');
+  }, [isFlag]);
 
+
+  // isFlag, num が変更された場合のみ、実行される。
+  useEffect(() => {
+    console.log('useEffect Test');
+  }, [isFlag, num]);
 
 
 
@@ -75,9 +80,12 @@ export const App = () => {
 
   const result = useMemo(() => {
     return sum(num, 7);
+    // return 必須。
+    // ; OK。
   }, [num]);
     // or
-  // const result = useMemo(() => sum(num, 7), [num]);
+  // 省略形  const result = useMemo(() => sum(num, 7), [num]);
+    // sum(num, 7); の ; は、不可。
 
   console.log(result);
 
@@ -86,8 +94,7 @@ export const App = () => {
   // 第２引数を省略すると、レンダリングのたびに実行される。
 
 
-  // 第２引数に空の依存配列を渡した場合、初回の一度のみ実行され、２度目以降のレンダリング時にはキャッシュから値（関数を実行した結果の値）を取得する。
-  // 初回のレンダリング時の計算結果を使い回す。
+  // 第２引数に空の依存配列を渡した場合、初回の一度のみ実行され、２度目以降のレンダリング時にはキャッシュから値（関数を実行した結果の値）を取得する。 初回のレンダリング時の計算結果を使い回す。
   // const result1 = useMemo(() => {
   //   return num + 1;
   // }, []);
@@ -96,11 +103,11 @@ export const App = () => {
 
 
   // 第２引数の依存配列が空でない場合、要素の値に変更があった場合のみ、関数を再実行する。
-  const result2 = useMemo(() => {
-    return num + 1;
-  }, [num]);
+  // const result2 = useMemo(() => {
+  //   return num + 1;
+  // }, [num]);
 
-  console.log(result2);
+  // console.log(result2);
 
 
 
@@ -139,7 +146,7 @@ export const App = () => {
       <div className="mt-10 border-8 border-yellow-700 p-5">
         <div className="text-3xl">{num}</div>
 
-        <button className="mt-2 border-8 border-green-700 p-4 bg-lime-400 text-xl font-bold rounded-xl" type="button" onClick={incrementNum}>+1 ボタン</button>
+        <button className="mt-2 border-8 border-green-700 rounded-xl p-4 bg-lime-400 text-xl font-bold" type="button" onClick={incrementNum}>+1 ボタン</button>
 
         <Child subtractNum={subtractNum} resetNum={resetNum} />
       </div>
